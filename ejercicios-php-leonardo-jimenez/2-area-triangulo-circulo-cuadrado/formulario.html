@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Área de triángulo, círculo y cuadrado</title>
+</head>
+<body>
+    <h1>Área de triángulo, círculo y cuadrado</h1>
+    <!-- Formulario -->
+    <form action="server.php" method="post" enctype="multipart/form-data">
+
+        <!-- Triángulo -->
+        <label for="areaTriangulo"><h3>Datos Triangulo:</h3></label>
+        <input type="number" name="baseTriangulo" id="baseTriangulo" placeholder="Base"><br>
+        <input type="number" name="alturaTriangulo" id="alturaTriangulo" placeholder="Altura"><br>
+
+        <!-- Circulo -->
+        <label for="areaCirculo"><h3>Datos Círculo:</h3></label>
+        <input type="number" name="radioCirculo" id="radioCirculo" placeholder="Radio"><br>
+
+        <!-- Cuadrado -->
+        <label for="areaCuadrado"><h3>Datos Cuadrado:</h3></label>
+        <input type="number" name="ladoCuadrado" id="ladoCuadrado" placeholder="Lado"><br>
+
+        <!-- Reset -->
+        <input type="reset" value="Limpiar">
+
+        <!-- Envio -->
+        <input type="submit" value="Enviar">
+    </form>
+</body>
+</html>

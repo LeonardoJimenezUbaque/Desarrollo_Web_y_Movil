@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Binario a decimal</title>
+</head>
+<body>
+    <h1>Binario a decimal</h1>
+    <!-- Formulario -->
+    <form action="server.php" method="post">
+
+        <!-- Input simple -->
+        <!-- Solo recibe los numeros 0 y 1 -->
+        <label>Número:</label><br>
+        <input type="number" name="numero1" id="numero1" onkeypress="return (event.charCode >= 48 && event.charCode <= 49)" placeholder="Número 1"><br>
+        <input type="number" name="numero2" id="numero2" onkeypress="return (event.charCode >= 48 && event.charCode <= 49)" placeholder="Número 2"><br>
+        <input type="number" name="numero3" id="numero3" onkeypress="return (event.charCode >= 48 && event.charCode <= 49)" placeholder="Número 3"><br>
+        <input type="number" name="numero4" id="numero4" onkeypress="return (event.charCode >= 48 && event.charCode <= 49)" placeholder="Número 4"><br>
+
+        <!-- Reset -->
+        <input type="reset" value="Limpiar">
+
+        <!-- Envio -->
+        <input type="submit" value="Enviar">
+    </form>
+</body>
+</html>
