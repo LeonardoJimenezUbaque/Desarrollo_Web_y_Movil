@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro</title>
+</head>
+<body>
+    <!-- Formulario -->
+    <form action="server.php" method="post">
+        <!-- Input simple -->
+        <input type="text" name="id" id="id" placeholder="Identificación"><br>
+        <input type="text" name="nombre" id="nombre" placeholder="Nombre"><br>
+        <input type="text" name="apellido" id="apellido" placeholder="Apellido"><br>
+        <input type="number" name="edad" id="edad" placeholder="Edad"><br>
+        <input type="email" name="correo" id="correo" placeholder="Correo"><br>
+        <input type="password" name="password" id="password" placeholder="Password"><br>
+
+        <!-- Reset -->
+        <input type="reset" value="Limpiar">
+
+        <!-- Envio -->
+        <input type="submit" value="Enviar">
+    </form>
+</body>
+</html>
