@@ -1,27 +1,138 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Registro</title>
+    <title>Registrate</title>
 </head>
 <body>
     <!-- Formulario -->
     <form action="server.php" method="post">
-        <!-- Input simple -->
-        <input type="text" name="id" id="id" placeholder="Identificación"><br>
-        <input type="text" name="nombre" id="nombre" placeholder="Nombre"><br>
-        <input type="text" name="apellido" id="apellido" placeholder="Apellido"><br>
-        <input type="number" name="edad" id="edad" placeholder="Edad"><br>
-        <input type="email" name="correo" id="correo" placeholder="Correo"><br>
-        <input type="password" name="password" id="password" placeholder="Password"><br>
+        <!-- Esta parte es provisional para la prueba de los comandos de bases de datos -->
+        <label for="opciones"><h3>Seleccione que desea hacer en la base de datos</h3></label>
+        <select name="opciones" id="opciones" onchange="mostrarInputs(this.value)">
+            <option value="none">Seleccione una opción</option>
+            <option value="insert">Insert</option>
+            <option value="select">Select</option>
+            <option value="update">Update</option>
+            <option value="delete">Delete</option>
+        </select><br>
 
-        <!-- Reset -->
-        <input type="reset" value="Limpiar">
-
-        <!-- Envio -->
-        <input type="submit" value="Enviar">
+        <div id="datosUsuario" style="display: none;">
+            <!-- Ingreso de los datos del usuario -->
+            <label><b>Ingresa tus datos</b></label><br>
+            <!-- Inputs -->
+            <div id="id" style="display: none;">
+                <label for="id">Identificación</label><br>
+                <input type="text" name="id" placeholder="Identificación"><br>
+            </div>
+            <div id="nuevoId" style="display: none;">
+                <label for="nuevoId">Nueva Identificación</label><br>
+                <input type="text" name="nuevoId" placeholder="Nuevo Identificación"><br>
+            </div>
+            <div id="nombre" style="display: none;">
+                <label for="nombre">Nombre</label><br>
+                <input type="text" name="nombre" id="nombre" placeholder="Nombre"><br>
+            </div>
+            <div id="apellido" style="display: none;">
+                <label for="apellido">Apellido</label><br>
+                <input type="text" name="apellido" placeholder="Apellido"><br>
+            </div>
+            <div id="edad" style="display: none;">
+                <label for="edad">Edad</label><br>
+                <input type="number" name="edad" placeholder="Edad"><br>
+            </div>
+            <div id="correo" style="display: none;">
+                <label for="correo">Correo</label><br>
+                <input type="email" name="correo" placeholder="Correo"><br>
+            </div>
+            <div id="password" style="display: none;">
+                <label for="password">Password</label><br>
+                <input type="password" name="password" placeholder="Password"><br>
+            </div>
+            <div id="reset" style="display: none;">
+                <!-- Reset -->
+                <input type="reset" value="Limpiar">
+            </div>
+            <div id="submit" style="display: none;">
+                <!-- Envio -->
+                <input type="submit" value="Enviar">
+            </div>
+        </div>
     </form>
+
+    <script>
+        // Muestra los inputs necesarios de acuerdo a la opción seleccionada para usar la base de datos
+        function mostrarInputs(opcionSeleccionada) {
+            // Divs
+            var datosUsuario = document.getElementById("datosUsuario");
+            var divId = document.getElementById("id");
+            var divNuevoId = document.getElementById("nuevoId");
+            var divNombre = document.getElementById("nombre");
+            var divApellido = document.getElementById("apellido");
+            var divEdad = document.getElementById("edad");
+            var divCorreo = document.getElementById("correo");
+            var divPassword = document.getElementById("password");
+            var divSubmit = document.getElementById("submit");
+            var divReset = document.getElementById("reset");
+
+            // Muestra los campos adicionales según la categoría seleccionada
+            if (opcionSeleccionada === "none") {
+                datosUsuario.style.display = "none";
+            }
+            else if (opcionSeleccionada === "insert") {
+                datosUsuario.style.display = "block";
+                divId.style.display = "block";
+                divNuevoId.style.display = "none";
+                divNombre.style.display = "block";
+                divApellido.style.display = "block";
+                divEdad.style.display = "block";
+                divCorreo.style.display = "block";
+                divPassword.style.display = "block";
+                divSubmit.style.display = "block";
+                divReset.style.display = "block";
+            }
+            else if (opcionSeleccionada === "select") {
+                datosUsuario.style.display = "block";
+                divId.style.display = "block";
+                divNuevoId.style.display = "none";
+                divNombre.style.display = "none";
+                divApellido.style.display = "none";
+                divEdad.style.display = "none";
+                divCorreo.style.display = "none";
+                divPassword.style.display = "none";
+                divSubmit.style.display = "block";
+                divReset.style.display = "block";
+
+            }
+            else if (opcionSeleccionada === "update") {
+                datosUsuario.style.display = "block";
+                divId.style.display = "block";
+                divNuevoId.style.display = "block";
+                divNombre.style.display = "block";
+                divApellido.style.display = "block";
+                divEdad.style.display = "block";
+                divCorreo.style.display = "block";
+                divPassword.style.display = "block";
+                divSubmit.style.display = "block";
+                divReset.style.display = "block";
+
+            }
+            else if (opcionSeleccionada === "delete") {
+                datosUsuario.style.display = "block";
+                divId.style.display = "block";
+                divNuevoId.style.display = "none";
+                divNombre.style.display = "none";
+                divApellido.style.display = "none";
+                divEdad.style.display = "none";
+                divCorreo.style.display = "none";
+                divPassword.style.display = "none";
+                divSubmit.style.display = "block";
+                divReset.style.display = "block";
+
+            }
+        }
+    </script>
 </body>
 </html>
